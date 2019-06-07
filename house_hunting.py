@@ -1,15 +1,14 @@
-annual_salary = int(input("Type annual salary here:"))
-portion_saved = float(input("Type the portion you want to save (as a decimal):"))
-total_cost = float(input("Type the cost of your dream house here:"))
+annual_salary = int(input("Type annual salary here: "))
+portion_saved = float(input("Type the portion you want to save as a decimal: "))
+total_cost = float(input("Type the cost of your dream house here: "))
 
-monthly_salary = (annual_salary / 12.0)
-portion_down_payment = .25 * total_cost
+r = 0.04
+portion_down_payment = 0.25 
 current_savings = 0
-rate = .04/12
-monthly_savings = monthly_salary * portion_saved
+month = 0
 
-i = 0
-while (current_savings <= portion_down_payment):
-    current_savings = current_savings + (monthly_savings) * rate + monthly_savings
-    i = i+1
-print(i)
+while current_savings < (total_cost * portion_down_payment):
+    month = month + 1
+    current_savings = (current_savings) + (portion_saved*annual_salary/12) + (current_savings*r/12)
+   
+print(month)
